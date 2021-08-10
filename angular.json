@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ElTablazo"
+    }
+  },
+  "defaultProject": "ElTablazo",
+  "cli": {
+    "analytics": "264c832c-6129-4ff5-bcb9-88f1aaac7a0f"
+  }
 }

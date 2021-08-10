@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="showError">
+        <strong>¡Cuidado!</strong> {{messageError}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="showError = false"></button>
+      </div>
+    <div class="col-lg-2 col-md-2 col-xs-12">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <select class="form-select form-select-lg mb-3" (change)="selectRouteInit($event.target.value)">
+                    <option selected value="-1">
+                        Inicio
+                    </option>
+                    <option value="[-74.07006781852793, 4.701902284755329]">
+                        Ruta 1
+                    </option>
+                    <option value="[-74.04187243752042, 4.688172684613618]">
+                        Ruta 2
+                    </option>
+                </select>
+            </div>
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <select  class="form-select form-select-lg mb-3" (change)="selectRouteEnd($event.target.value)">
+                    <option selected value="-1">
+                        Fin
+                    </option>
+                    <option value="[-74.15615599899698, 4.685264198817035]">
+                        Ruta 1
+                    </option>
+                    <option value="[-74.09568827904006, 4.587566310486372]">
+                        Ruta 2
+                    </option>
+                </select>
+            </div>
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <button (click)="drawRoute()" class="btn btn-primary">Dibujar Ruta</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-10 col-md-10 col-xs-12">
+        <div class="wrapper">
+            <div id="map" #asMap class="map-container"></div>
+        </div>
+    </div>
+</div>
